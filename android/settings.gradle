@@ -1,0 +1,3 @@
+rootProject.name = 'binder_codebase'
+
+include ':app'
