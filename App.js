@@ -1,58 +1,74 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
-import React, { Component } from 'react';
+import React, {Component} from 'react'
 import {
-  Platform,
   StyleSheet,
+  View,
+  Image,
   Text,
-  View
-} from 'react-native';
+  PanResponder,
+  Animated
+} from 'react-native'
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+const fbImage = 'https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/21740009_10155551554225821_4509110330799844755_n.jpg?_nc_cat=0&oh=9e90a2e9c7a8e533fdd8017198c097a5&oe=5B4F80EC'
 
-type Props = {};
-export default class App extends Component<Props> {
+export default class App extends Component {
+  componentWillMount() {
+    this.pan = new Animated.ValueXY()
+
+    this.cardPanResponder = PanResponder.create({
+      onStartShouldSetPanResponder: () => true,
+      onPanResponderMove: Animated.event([
+        null,
+        {dx:this.pan.x, dy:this.pan.y},
+      ]),
+      onPanResponderRelease: () => {
+        Animated.spring(this.pan, {
+          toValue: {x:0, y:0},
+          friction: 4.5,
+        }).start()
+      }
+    })
+  }
   render() {
+    const rotateCard = this.pan.x.interpolate({
+      inputRange: [-200, 0, 200],
+      outputRange: ['10deg', '0deg', '-10deg'],
+    })
+
+    const animatedStyle = {
+      transform: [
+        {translateX: this.pan.x},
+        {translateY: this.pan.y},
+        {rotate: rotateCard},
+      ],
+    }
+
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
-      </View>
-    );
+      <Animated.View
+        {...this.cardPanResponder.panHandlers}
+        style={[styles.card, animatedStyle]}>
+        <Image
+          style={{flex:1}}
+          source={{uri: fbImage}}
+        />
+        <View style={{margin:20}}>
+          <Text style={{fontSize:20}}>Mahnoor, 24</Text>
+          <Text style={{fontSize:15, color:'darkgrey'}}>Fly Girl</Text>
+        </View>
+      </Animated.View>
+    )
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
+  card: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
+    overflow: 'hidden',
+    backgroundColor: 'white',
     margin: 10,
+    marginTop: 100,
+    marginBottom: 100,
+    borderWidth: 1,
+    borderColor: 'lightgrey',
+    borderRadius: 8,
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+})

@@ -1,0 +1,19 @@
+dependencies: \
+  /Users/kdabiedeen/Desktop/binder/node_modules/react-native/Libraries/NativeAnimation/Drivers/RCTDecayAnimation.m \
+  /Users/kdabiedeen/Desktop/binder/node_modules/react-native/Libraries/NativeAnimation/Drivers/RCTDecayAnimation.h \
+  /Users/kdabiedeen/Desktop/binder/node_modules/react-native/Libraries/NativeAnimation/Drivers/RCTAnimationDriver.h \
+  /Users/kdabiedeen/Desktop/binder/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeModule.h \
+  /Users/kdabiedeen/Desktop/binder/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h \
+  /Users/kdabiedeen/Desktop/binder/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTConvert.h \
+  /Users/kdabiedeen/Desktop/binder/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAnimationType.h \
+  /Users/kdabiedeen/Desktop/binder/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBorderStyle.h \
+  /Users/kdabiedeen/Desktop/binder/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTLog.h \
+  /Users/kdabiedeen/Desktop/binder/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAssert.h \
+  /Users/kdabiedeen/Desktop/binder/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTUtils.h \
+  /Users/kdabiedeen/Desktop/binder/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTPointerEvents.h \
+  /Users/kdabiedeen/Desktop/binder/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTTextDecorationLineType.h \
+  /Users/kdabiedeen/Desktop/binder/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
+  /Users/kdabiedeen/Desktop/binder/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Users/kdabiedeen/Desktop/binder/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
+  /Users/kdabiedeen/Desktop/binder/node_modules/react-native/Libraries/NativeAnimation/Nodes/RCTValueAnimatedNode.h \
+  /Users/kdabiedeen/Desktop/binder/node_modules/react-native/Libraries/NativeAnimation/Nodes/RCTAnimatedNode.h
