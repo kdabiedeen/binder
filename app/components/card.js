@@ -12,8 +12,6 @@ import moment from 'moment'
 
 const {width, height} = Dimensions.get('window')
 
-const fbImage = 'https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/21740009_10155551554225821_4509110330799844755_n.jpg?_nc_cat=0&oh=9e90a2e9c7a8e533fdd8017198c097a5&oe=5B4F80EC'
-
 export default class Card extends Component {
   componentWillMount() {
     this.pan = new Animated.ValueXY()
